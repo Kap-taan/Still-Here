@@ -1,0 +1,196 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap');
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.back{
+    /* background: url("../Images/Krsna.jpg"); */
+    background-size: cover;
+    /* filter: brightness(50%); */
+    display: flex;
+}
+
+body{
+    height: 100vh;
+    width: 100%;
+    font-family: 'Krona One', sans-serif;
+    ;
+    /* background-image: linear-gradient(0deg, rgb(247, 247, 247), 23.8%, rgb(252, 221, 221)); */
+    background-color: rgb(36,0,4);
+     display: flex;
+
+    /* flex-direction: column; */
+    /* justify-content: center; */
+    /* align-items: center;  */
+}
+
+header{
+    width: 100%;
+    margin-bottom: 200px;
+    /* border: 2px solid violet; */
+    height: 100vh;
+}
+
+ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px;
+    height: 100vh;
+}
+
+a{
+    color: #fff;
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+    
+}
+
+h1{
+    color: white;
+    text-align: center;
+}
+
+h2{
+    color: #fff;
+}
+
+.info{
+    height: 100vh;
+    /* border: 2px solid red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.info p{
+    color: white;
+    font-family: 'New Tegomin', serif;
+    font-size: 30px;
+}
+
+.info img{
+    width: 200px;
+}
+
+.main{
+    /* border: 2px solid blue; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.music-container{
+    /* border: 2px solid red; */
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 20px 20px 0 rgba(252, 169, 169, 0.6);
+    display: flex;
+    padding: 20px 30px;
+    position: relative;
+    margin: 100px 0;
+    z-index: 10;
+}
+
+.img-container{
+    width: 110px;
+    position: relative;
+}
+
+.img-container img{
+    width: inherit;
+    height: 110px;
+    border-radius: 50%;
+    object-fit:fill;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    animation: rotate 3s linear infinite;
+
+    animation-play-state: paused;
+}
+
+.music-container.play .img-container img{
+    animation-play-state: running;
+}
+
+@keyframes rotate {
+
+    from{
+        transform: rotate(0deg); 
+    }
+
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+.navigation{
+    /* border: 2px solid red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.action-btn{
+    background-color: #fff;
+    border: 0;
+    color: #aca6ac;
+    font-size: 20px;
+    padding: 10px;
+    margin: 0 20px;
+    cursor: pointer;
+}
+
+.action-btn-big{
+    color: #cdc2d0;
+    font-size: 30px;
+}
+
+.action-btn:focus{
+    outline: 0;
+}
+
+.music-info{
+    /* border: 2px solid red; */
+    background-color: rgba(255, 255, 255,  0.5); 
+    border-radius: 15px 15px 0 0;
+    position: absolute;
+    top: 0;
+    left: 20px;
+    opacity: 0;
+    width: calc(100% - 40px);
+    transform: translate(0%);
+    padding: 10px 10px 10px 120px;
+    transition: transform 0.3s ease-in, opacity 0.3s ease-in;
+}
+
+.music-info h4{
+    margin: 0px;
+}
+
+.music-container.play .music-info{
+    opacity: 1;
+    transform: translateY(-100%);
+}
+
+
+
+
+
+
+
